@@ -6,6 +6,7 @@ import { Form, useForm } from "react-hook-form";
 import { z } from "zod";
 import { FormControl, FormField, FormItem, FormLabel } from "../ui/form";
 import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email!"),
@@ -55,6 +56,9 @@ function LoginForm() {
             </FormItem>
           )}
         />
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? "Signing in..." : "Sign in"}
+        </Button>
       </form>
     </Form>
   );
