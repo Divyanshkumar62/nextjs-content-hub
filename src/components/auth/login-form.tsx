@@ -25,9 +25,19 @@ function LoginForm() {
       password: "",
     },
   });
+
+  const onFormSubmit = async (value: loginFormValues) => {
+    setIsLoading(true);
+    try {
+      console.log(value);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <Form {...form}>
-      <form className="space-y-4">
+      <form onSubmit={form.handleSubmit(onFormSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="email"

@@ -36,10 +36,10 @@ function RegisterForm() {
     },
   });
 
-  const onSubmit = async (value: RegisterFormValues) => {
+  const onFormSubmit = async (value: RegisterFormValues) => {
     setIsLoading(true);
     try {
-
+      console.log(value)
     } catch (error){
       console.error(error)
     }
@@ -47,7 +47,7 @@ function RegisterForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onFormSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="name"
